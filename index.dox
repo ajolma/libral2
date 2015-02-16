@@ -1,0 +1,33 @@
+/*! \mainpage libral - Raster Algebra Library
+
+\section index_preface Preface
+
+NOTE: this document reflects the current SVN version and not any
+released version.
+
+Libral is a part of the <a
+href="http://trac.osgeo.org/geoinformatica/">Geoinformatica stack</a>.
+
+This page needs to be rewritten for libral2.
+
+\section index_intro Introduction
+
+\section index_return_values Return values and error handling
+
+\section index_naming Naming
+
+\section index_nodata_values Undefined (no data) values
+
+\section index_in_place In-place changes
+
+\section index_conversion Conversion from integer to real valued grid and vice versa
+
+\section index_structs Structures (classes)
+
+\section index_setting Setting and getting the cell values of grids
+
+\section index_statistics Basic statistics of grids
+
+\section index_methods More raster methods
+
+*/

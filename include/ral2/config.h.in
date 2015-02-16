@@ -1,0 +1,10 @@
+#ifndef RAL_CONFIG_H
+#define RAL_CONFIG_H
+
+#ifdef MSVC
+#define RAL_CALL __declspec(dllexport) __cdecl
+#else
+#define RAL_CALL
+#endif
+
+#endif
