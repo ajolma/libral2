@@ -1719,13 +1719,10 @@ void *ral_grid_focal_count(ral_grid_t *gd, ral_rcoords_t * rc, ral_array_t * foc
     return ret;
 }
 
-void *ral_grid_focal_count_of(ral_grid_t *gd, ral_rcoords_t * rc, ral_array_t * focus, RAL_INTEGER value)
+void *ral_grid_focal_count_of(ral_grid_t *gd, ral_rcoords_t * rc, ral_array_t * focus, ral_integer_t * value)
 {
     ral_array_t * a = ral_grid_get_focal(gd, rc, focus);
-    ral_integer_t * i = ral_integer_new(0);
-    i->value = value;
-    void *ret = ral_array_count_of(a, i);
-    ral_delete(i);
+    void *ret = ral_array_count_of(a, value);
     ral_delete(a);
     return ret;
 }
@@ -1798,7 +1795,7 @@ fail:
     return NULL;
 }
 
-ral_grid_t *ral_grid_focal_count_of_grid(ral_grid_t *grid, ral_array_t * focus, RAL_INTEGER value, ral_error_t **e)
+ral_grid_t *ral_grid_focal_count_of_grid(ral_grid_t *grid, ral_array_t * focus, ral_integer_t * value, ral_error_t **e)
 {
     ral_grid_t *ret = NULL;
     ral_cell_t c;
@@ -1838,7 +1835,7 @@ ral_hash_t * ral_grid_zonal_count(ral_grid_t *gd, ral_grid_t *zones)
     return NULL;
 }
 
-ral_hash_t * ral_grid_zonal_count_of(ral_grid_t *gd, ral_grid_t *zones, RAL_INTEGER value)
+ral_hash_t * ral_grid_zonal_count_of(ral_grid_t *gd, ral_grid_t *zones, ral_integer_t * value)
 {
     ral_cell_t c;
     ral_hash_t * counts = ral_new(ralHash);
@@ -1846,7 +1843,7 @@ ral_hash_t * ral_grid_zonal_count_of(ral_grid_t *gd, ral_grid_t *zones, RAL_INTE
            zones->type == integer, BAD);
     ral_integer_t * key = ral_integer_new(0);
     FOR(c, gd) {
-        if (GCivND(zones, c) OR GCivND(gd, c) OR GCiv(gd, c) != value)  continue;
+        if (GCivND(zones, c) OR GCivND(gd, c) OR GCiv(gd, c) != value->value)  continue;
         key->value = (long)GCiv(zones, c);
         ral_integer_t * count = ral_lookup(counts, key);
         if (count)
@@ -2175,13 +2172,13 @@ long ral_grid_count(ral_grid_t *gd)
     return count;
 }
 
-long ral_grid_count_of(ral_grid_t *gd, RAL_INTEGER value)
+long ral_grid_count_of(ral_grid_t *gd, ral_integer_t * value)
 {
     ral_cell_t c;
     long count = 0;
     ASSERT(gd->type == integer, BAD);
     FOR(c, gd)
-        if (GCivD(gd, c) AND GCiv(gd, c) == value)
+        if (GCivD(gd, c) AND GCiv(gd, c) == value->value)
             count++;
  fail:
     return count;

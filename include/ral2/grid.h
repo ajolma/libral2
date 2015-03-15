@@ -181,19 +181,19 @@ ral_object_t *RAL_CALL ral_grid_focal_sum(ral_grid_t *grid, ral_rcoords_t * c, r
 ral_object_t *RAL_CALL ral_grid_focal_mean(ral_grid_t *grid, ral_rcoords_t * c, ral_array_t * focus);
 ral_object_t *RAL_CALL ral_grid_focal_variance(ral_grid_t *grid, ral_rcoords_t * c, ral_array_t * focus);
 ral_object_t *RAL_CALL ral_grid_focal_count(ral_grid_t *grid, ral_rcoords_t * c, ral_array_t * focus);
-ral_object_t *RAL_CALL ral_grid_focal_count_of(ral_grid_t *grid, ral_rcoords_t * c, ral_array_t * focus, RAL_INTEGER value);
+ral_object_t *RAL_CALL ral_grid_focal_count_of(ral_grid_t *grid, ral_rcoords_t * c, ral_array_t * focus, ral_integer_t * value);
 ral_interval_t * RAL_CALL ral_grid_focal_range(ral_grid_t *grid, ral_rcoords_t * c, ral_array_t * focus);
 
 ral_grid_t RAL_CALL *ral_grid_focal_sum_grid(ral_grid_t *grid, ral_array_t * focus);
 ral_grid_t RAL_CALL *ral_grid_focal_mean_grid(ral_grid_t *grid, ral_array_t * focus);
 ral_grid_t RAL_CALL *ral_grid_focal_variance_grid(ral_grid_t *grid, ral_array_t * focus);
 ral_grid_t RAL_CALL *ral_grid_focal_count_grid(ral_grid_t *grid, ral_array_t * focus, ral_error_t **e);
-ral_grid_t RAL_CALL *ral_grid_focal_count_of_grid(ral_grid_t *grid, ral_array_t * focus, RAL_INTEGER value, ral_error_t **e);
+ral_grid_t RAL_CALL *ral_grid_focal_count_of_grid(ral_grid_t *grid, ral_array_t * focus, ral_integer_t * value, ral_error_t **e);
 
 /** Zonal methods */
 
 ral_hash_t * RAL_CALL ral_grid_zonal_count(ral_grid_t *gd, ral_grid_t *zones);
-ral_hash_t * RAL_CALL ral_grid_zonal_count_of(ral_grid_t *gd, ral_grid_t *zones, RAL_INTEGER value);
+ral_hash_t * RAL_CALL ral_grid_zonal_count_of(ral_grid_t *gd, ral_grid_t *zones, ral_integer_t * value);
 ral_hash_t * RAL_CALL ral_grid_zonal_sum(ral_grid_t *gd, ral_grid_t *zones);
 ral_hash_t * RAL_CALL ral_grid_zonal_range(ral_grid_t *gd, ral_grid_t *zones);
 ral_hash_t * RAL_CALL ral_grid_zonal_min(ral_grid_t *gd, ral_grid_t *zones); /** deprecated, use ral_grid_zonal_range */
@@ -209,7 +209,7 @@ ral_interval_t * RAL_CALL ral_grid_get_value_range(ral_grid_t *gd);
 
 /** count, sum, mean, and variance of all cell values (except of 'no data' cells)*/
 long RAL_CALL ral_grid_count(ral_grid_t *gd);
-long RAL_CALL ral_grid_count_of(ral_grid_t *gd, RAL_INTEGER value);
+long RAL_CALL ral_grid_count_of(ral_grid_t *gd, ral_integer_t * value);
 double RAL_CALL ral_grid_sum(ral_grid_t *gd);
 double RAL_CALL ral_grid_mean(ral_grid_t *gd);
 double RAL_CALL ral_grid_variance(ral_grid_t *gd);

@@ -35,7 +35,7 @@
 #include <gdk-pixbuf/gdk-pixbuf.h>
 
 /* local configuration of the library: */
-#include <ral/config.h>
+#include <ral2/config.h>
 
 /* subsystems: */
 #include <ral2/class.h>
