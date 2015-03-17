@@ -3,7 +3,7 @@ exec_prefix=${prefix}
 libdir=${exec_prefix}/lib
 includedir=${prefix}/include
 
-Name: libral
+Name: libral2
 Description: Raster algebra functions for in-memory grids
 Version: @VERSION@
 Requires: @REQUIRES@
