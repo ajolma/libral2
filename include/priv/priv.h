@@ -19,7 +19,7 @@
 #include <gdk-pixbuf/gdk-pixbuf.h>
 
 #include "priv/config.h"
-#include "ral/config.h"
+#include "ral2/config.h"
 #include "priv/msg.h"
 #include "priv/util.h"
 #include "priv/geometry.h"
